@@ -6,7 +6,7 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  const obj = {};
+  const styleObject = {}; // більш описова назва
 
   const declarations = sourceString.split(';');
 
@@ -20,11 +20,11 @@ function convertToObject(sourceString) {
     const [key, value] = trimmed.split(':');
 
     if (key && value) {
-      obj[key.trim()] = value.trim();
+      styleObject[key.trim()] = value.trim();
     }
   });
 
-  return obj;
+  return styleObject;
 }
 
 module.exports = convertToObject;
